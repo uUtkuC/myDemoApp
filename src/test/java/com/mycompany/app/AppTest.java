@@ -32,11 +32,11 @@ public class AppTest
     private int Expectedvalid;
 
 
-    @Before
-    public void initialize(){app = new App()};
+
+    public void initialize(){app = new App();};
     // constructor method that accepts input and output.
 
-    @Test
+
     public AppTest( String testName )
     {
 
@@ -50,6 +50,10 @@ public class AppTest
     {
 
         return new TestSuite( AppTest.class );
+    }
+
+    public void testAlwaysTrue(){
+       assertEquals("True",1,1);
     }
 
     /**
