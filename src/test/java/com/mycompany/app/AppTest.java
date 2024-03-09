@@ -39,8 +39,7 @@ public class AppTest
         int [] arr2 = new int[]{10,1,2,3};
         boolean valid = false;
         int threshold = 2;
-        assertFalse(
-                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
 
     }
     public void testShouldReturnFalseWhenThresholdHigher(){
@@ -48,8 +47,7 @@ public class AppTest
         int [] arr2 = new int[]{10,1,2,3};
         boolean valid = true;
         int threshold = 200;
-        assertFalse(
-                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
 
     }
     public void testShouldReturnTrue(){
@@ -57,8 +55,7 @@ public class AppTest
         int [] arr2 = new int[]{10,1,2,3};
         boolean valid = true;
         int threshold = 10;
-        assertTrue(
-                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+        assertTrue(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
 
     }
     public void testNull() {
@@ -66,8 +63,7 @@ public class AppTest
         int [] arr2 = null;
         boolean valid = false;
         int threshold = 0;
-        assertFalse(
-                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
 
     }
     public void testWhenBothNotValidAndThresholdHigher(){
@@ -75,8 +71,7 @@ public class AppTest
         int [] arr2 = new int[]{10,1,2,3};
         boolean valid = false;
         int threshold = 200;
-        assertFalse(
-                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
 
 
     }
@@ -85,8 +80,7 @@ public class AppTest
         int [] arr2 = new int[]{10,1,2,3};
         boolean valid = false;
         int threshold = 200;
-        assertFalse(
-                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
 
 
     }
@@ -95,8 +89,7 @@ public class AppTest
         int [] arr2 = new int[]{10,1,2,3};
         boolean valid = true;
         int threshold = 2;
-        assertFalse(
-                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
 
     }
 
