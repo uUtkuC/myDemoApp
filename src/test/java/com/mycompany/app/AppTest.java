@@ -1,5 +1,5 @@
 
-/*package com.mycompany.app;
+package com.mycompany.app;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.Arrays;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
+/*
 public class AppTest 
     extends TestCase
 {
