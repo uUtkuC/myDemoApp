@@ -3,6 +3,7 @@ package com.mycompany.app;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import com.mycompany.app.AppTest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
