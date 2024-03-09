@@ -11,7 +11,7 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
-    private App app;
+    private App app = new App();
     // following are variables that are to be used given to app as parameters
     private int [] inpArr;
     private ArrayList<Integer> inpArrayList;
@@ -25,8 +25,6 @@ public class AppTest
     private int Expectedvalid;
 
 
-
-    public void initialize(){app = new App();};
     // constructor method that accepts input and output.
 
 
