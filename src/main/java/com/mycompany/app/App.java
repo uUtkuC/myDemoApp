@@ -87,6 +87,7 @@ public class App
 
     public static boolean firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue
             (int [] ar1, ArrayList<Integer> arayList, int threshold, boolean valid){
+            if(ar1 == null || arayList == null) return false;
             if(valid == true) {
                 int sum1 = 0;
                 for (int i = 0; i < ar1.length; i++) {

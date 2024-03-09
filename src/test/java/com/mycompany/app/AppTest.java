@@ -36,16 +36,72 @@ public class AppTest
         super( testName );
     }
 
+    public void testShouldReturnFalseWhenNotValid(){
+        ArrayList<Integer> arr1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4));
+        int [] arr2 = new int[]{10,1,2,3};
+        boolean valid = false;
+        int threshold = 2;
+        assertFalse(
+                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
 
-    public static Test suite()
-    {
+    }
+    public void testShouldReturnFalseWhenThresholdHigher(){
+        ArrayList<Integer> arr1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4));
+        int [] arr2 = new int[]{10,1,2,3};
+        boolean valid = true;
+        int threshold = 200;
+        assertFalse(
+                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
 
-        return new TestSuite( AppTest.class );
+    }
+    public void testShouldReturnTrue(){
+        ArrayList<Integer> arr1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4));
+        int [] arr2 = new int[]{10,1,2,3};
+        boolean valid = true;
+        int threshold = 10;
+        assertTrue(
+                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+
+    }
+    public void testNull() {
+        ArrayList<Integer> arr1 = null;
+        int [] arr2 = null;
+        boolean valid = false;
+        int threshold = 0;
+        assertFalse(
+                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+
+    }
+    public void testWhenBothNotValidAndThresholdHigher(){
+        ArrayList<Integer> arr1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4));
+        int [] arr2 = new int[]{10,1,2,3};
+        boolean valid = false;
+        int threshold = 200;
+        assertFalse(
+                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+
+
+    }
+    public void testWhenNotValidAndThresholdHigherAndSecondArrayHigher(){
+        ArrayList<Integer> arr1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,100));
+        int [] arr2 = new int[]{10,1,2,3};
+        boolean valid = false;
+        int threshold = 200;
+        assertFalse(
+                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+
+
+    }
+    public void testShouldReturnFalseSecondArrhigher(){
+        ArrayList<Integer> arr1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,250));
+        int [] arr2 = new int[]{10,1,2,3};
+        boolean valid = true;
+        int threshold = 2;
+        assertFalse(
+                app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(arr2,arr1,threshold,valid));
+
     }
 
-    public void testAlwaysTrue(){
-       assertEquals("True",1,1);
-    }
 
 
     public void testApp()
