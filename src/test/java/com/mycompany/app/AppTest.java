@@ -10,7 +10,7 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
-    private App app = new App();
+    private App app;
     // following are variables that are to be used given to app as parameters
     private int [] inpArr;
     private ArrayList<Integer> inpArrayList;
@@ -25,6 +25,7 @@ public class AppTest
 
 
 
+    public void initialize(){app = new App();};
     public AppTest( String testName )
     {
 
@@ -95,7 +96,9 @@ public class AppTest
         assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
     }
 
-
+    public static Test suite()
+    {  return new TestSuite( AppTest.class );
+    }
 
     public void testApp()
     {
