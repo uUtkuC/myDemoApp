@@ -26,7 +26,9 @@ public class AppTest
 
 
 
-    public void initialize(){app = new App();};
+    public void setUp() {
+        app = new App();
+    }
     public AppTest( String testName )
     {
 
@@ -101,11 +103,6 @@ public class AppTest
     {  return new TestSuite( AppTest.class );
     }
 
-    public void testApp()
-    {
-
-        assertTrue( true );
-    }
 
 }
 
