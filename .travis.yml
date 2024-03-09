@@ -1,3 +1,17 @@
 language: java
+
+# Define the JDK version you want to use
 jdk:
   - oraclejdk8
+
+# Set the JAVA_HOME environment variable
+env:
+  - JAVA_HOME=/usr/lib/jvm/java-8-oracle
+
+# Add other configurations if needed
+
+# Your other Travis CI configurations...
+
+# Specify the build script or commands
+script:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
