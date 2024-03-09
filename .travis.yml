@@ -2,5 +2,5 @@ language: java
 
 # Define the JDK version you want to use
 jdk:
-  - oraclejdk8
+  - oraclejdk17
 
