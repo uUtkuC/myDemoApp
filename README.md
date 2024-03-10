@@ -2,4 +2,4 @@ This project recieves 2 integer arrays, then if the boolean "Valid" is true and 
 
 [![Build Status](https://app.travis-ci.com/uUtkuC/myDemoApp.svg?token=MPJppEgR4cb5sErtpUSF&branch=master)](https://app.travis-ci.com/uUtkuC/myDemoApp)
 
-Demo site: https://boiling-fortress-05565-509dd92bad4d.herokuapp.com/
+Demo site: https://boiling-fortress-05565-509dd92bad4d.herokuapp.com/compute
