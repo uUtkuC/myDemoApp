@@ -24,7 +24,7 @@ public class App
             //System.out.println(req.queryParams("input1"));
             //System.out.println(req.queryParams("input2"));
 
-            String inputArr1 = req.queryParams("inputArr1");
+            String inputArr1 = req.queryParams("inputParam1Arr");
             java.util.Scanner sc1 = new java.util.Scanner(inputArr1);
             sc1.useDelimiter("[;\r\n]+");
             java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
@@ -35,7 +35,7 @@ public class App
             }
             System.out.println(inputList);
 
-            String inputArr2 = req.queryParams("inputArr2");
+            String inputArr2 = req.queryParams("inputList2");
             java.util.Scanner sc2 = new java.util.Scanner(inputArr2);
             sc2.useDelimiter("[;\r\n]+");
             java.util.ArrayList<Integer> inputList2 = new java.util.ArrayList<>();
@@ -51,10 +51,10 @@ public class App
                 inputParam1Arr[i] = inputList.get(i);
             }
 
-            String input2 = req.queryParams("input2").replaceAll("\\s","");
+            String input2 = req.queryParams("input2AsInt").replaceAll("\\s","");
             int input2AsInt = Integer.parseInt(input2);
 
-            String inputBool = req.queryParams("inputBool 1 or 0").replaceAll("\\s","");
+            String inputBool = req.queryParams("valid").replaceAll("\\s","");
             int inputBoolAsInt = Integer.parseInt(inputBool);
 
             boolean valid = false;
