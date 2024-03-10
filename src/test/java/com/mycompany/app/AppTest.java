@@ -11,7 +11,6 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
-    private App app;
     // following are variables that are to be used given to app as parameters
     private int [] inpArr;
     private ArrayList<Integer> inpArrayList;
@@ -26,9 +25,7 @@ public class AppTest
 
 
 
-    public void setUp() {
-        app = new App();
-    }
+
     public AppTest( String testName )
     {
 
@@ -40,7 +37,7 @@ public class AppTest
         inpArr= new int[]{10,1,2,3};
         valid = false;
         threshold = 2;
-        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
+        assertFalse(App.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
 
     }
     public void testShouldReturnFalseWhenThresholdHigher(){
@@ -49,7 +46,7 @@ public class AppTest
         valid = true;
         threshold = 200;
 
-        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
+        assertFalse(App.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
 
     }
     public void testShouldReturnTrue(){
@@ -58,7 +55,7 @@ public class AppTest
         valid = true;
         threshold = 10;
 
-        assertTrue(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
+        assertTrue(App.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
 
     }
     public void testNull() {
@@ -67,7 +64,7 @@ public class AppTest
         valid = false;
         threshold = 0;
 
-        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
+        assertFalse(App.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
 
     }
     public void testWhenBothNotValidAndThresholdHigher(){
@@ -76,7 +73,7 @@ public class AppTest
         valid = false;
         threshold = 200;
 
-        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
+        assertFalse(App.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
 
 
     }
@@ -86,7 +83,7 @@ public class AppTest
         valid = false;
         threshold = 200;
 
-        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
+        assertFalse(App.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
 
 
     }
@@ -96,7 +93,7 @@ public class AppTest
         valid = true;
         threshold = 2;
 
-        assertFalse(app.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
+        assertFalse(App.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
     }
 
     public static Test suite()
