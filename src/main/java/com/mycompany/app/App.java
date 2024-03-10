@@ -52,9 +52,14 @@ public class App
             }
 
             String input2 = req.queryParams("input2AsInt").replaceAll("\\s","");
+            if(input2.equals("")) //is empty
+                input2 = "0"; // set to zero
             int input2AsInt = Integer.parseInt(input2);
 
             String inputBool = req.queryParams("valid").replaceAll("\\s","");
+            if(inputBool.equals("")) //is empty
+                inputBool = "0"; // set to zero
+
             int inputBoolAsInt = Integer.parseInt(inputBool);
 
             boolean valid = false;
