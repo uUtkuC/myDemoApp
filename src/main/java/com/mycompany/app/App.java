@@ -91,11 +91,11 @@ public class App
                 return new ModelAndView(map, "compute.mustache");
             }
             String inputBool = req.queryParams("valid").replaceAll("\\s","");
-            if(inputBool.equals("")) //is empty
-                inputBool = "0"; // set to zero
             int inputBoolAsInt;
             try {
                 inputBoolAsInt = Integer.parseInt(inputBool);
+                if(inputBoolAsInt != 1 || inputBoolAsInt != 0)
+                    inputBoolAsInt = Integer.paseInt("ahmet"); // cause error on purpose.
             }catch (Exception e){
                 Map map = new HashMap();
                 map.put("result", "Invalid");
