@@ -28,10 +28,15 @@ public class App
             java.util.Scanner sc1 = new java.util.Scanner(inputArr1);
             sc1.useDelimiter("[;\r\n]+");
             java.util.ArrayList<Integer> inputList = new java.util.ArrayList<>();
-            while (sc1.hasNext())
-            {
-                int value = Integer.parseInt(sc1.next().replaceAll("\\s",""));
-                inputList.add(value);
+            try {
+                while (sc1.hasNext()) {
+                    int value = Integer.parseInt(sc1.next().replaceAll("\\s", ""));
+                    inputList.add(value);
+                }
+            } catch (Exception e){
+                Map map = new HashMap();
+                map.put("result", "Invalid");
+                return new ModelAndView(map, "compute.mustache");
             }
             System.out.println(inputList);
 
@@ -39,12 +44,18 @@ public class App
             java.util.Scanner sc2 = new java.util.Scanner(inputArr2);
             sc2.useDelimiter("[;\r\n]+");
             java.util.ArrayList<Integer> inputList2 = new java.util.ArrayList<>();
-            while (sc2.hasNext())
-            {
-                int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
-                inputList2.add(value);
+
+            try {
+                while (sc2.hasNext()) {
+                    int value = Integer.parseInt(sc2.next().replaceAll("\\s", ""));
+                    inputList2.add(value);
+                }
+                System.out.println(inputList2);
+            }catch (Exception e){
+                Map map = new HashMap();
+                map.put("result", "Invalid");
+                return new ModelAndView(map, "compute.mustache");
             }
-            System.out.println(inputList2);
 
             int[] inputParam1Arr = new int[inputList.size()];
             for(int i=0; i < inputParam1Arr.length ;i++){
@@ -54,14 +65,25 @@ public class App
             String input2 = req.queryParams("input2AsInt").replaceAll("\\s","");
             if(input2.equals("")) //is empty
                 input2 = "0"; // set to zero
-            int input2AsInt = Integer.parseInt(input2);
-
+            int input2AsInt;
+            try {
+                input2AsInt = Integer.parseInt(input2);
+            } catch (Exception e){
+                Map map = new HashMap();
+                map.put("result", "Invalid");
+                return new ModelAndView(map, "compute.mustache");
+            }
             String inputBool = req.queryParams("valid").replaceAll("\\s","");
             if(inputBool.equals("")) //is empty
                 inputBool = "0"; // set to zero
-
-            int inputBoolAsInt = Integer.parseInt(inputBool);
-
+            int inputBoolAsInt;
+            try {
+                inputBoolAsInt = Integer.parseInt(inputBool);
+            }catch (Exception e){
+                Map map = new HashMap();
+                map.put("result", "Invalid");
+                return new ModelAndView(map, "compute.mustache");
+            }
             boolean valid = false;
             if( inputBoolAsInt == 1) valid = true;
 
