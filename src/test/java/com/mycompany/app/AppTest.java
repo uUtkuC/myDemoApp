@@ -95,7 +95,15 @@ public class AppTest
 
         assertFalse(App.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
     }
+    public void testThreshold(){
+        inpArrayList= new ArrayList<Integer>(Arrays.asList(1,2,3));
+        inpArr= new int[]{1,2};
+        valid = true;
+        threshold = 123;
 
+        assertFalse(App.firstArraySumGreaterThanSecondArraySumAndAThresholdValueWhenBooleanValidIsTrue(inpArr,inpArrayList,threshold,valid));
+
+    }
     public static Test suite()
     {  return new TestSuite( AppTest.class );
     }
