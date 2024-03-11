@@ -94,7 +94,7 @@ public class App
             int inputBoolAsInt;
             try {
                 inputBoolAsInt = Integer.parseInt(inputBool);
-                if(inputBoolAsInt != 1 || inputBoolAsInt != 0)
+                if(inputBoolAsInt != 1 && inputBoolAsInt != 0)
                     inputBoolAsInt = Integer.parseInt("ahmet"); // cause error on purpose.
             }catch (Exception e){
                 Map map = new HashMap();
