@@ -39,6 +39,13 @@ public class App
                 return new ModelAndView(map, "compute.mustache");
             }
             System.out.println(inputList);
+            try {
+                if(inputList.isEmpty())  throw new Exception();//set to an ınvalid type. Empty ınput cannot be accepted
+            } catch (Exception e){
+                Map map = new HashMap();
+                map.put("result", "Invalid because no input provided for at least 1 form");
+                return new ModelAndView(map, "compute.mustache");
+            }
 
             String inputArr2 = req.queryParams("inputList2");
             java.util.Scanner sc2 = new java.util.Scanner(inputArr2);
@@ -57,20 +64,30 @@ public class App
                 return new ModelAndView(map, "compute.mustache");
             }
 
+            try {
+                if(inputList2.isEmpty())  throw new Exception();//set to an ınvalid type. Empty ınput cannot be accepted
+
+            } catch (Exception e){
+                Map map = new HashMap();
+                map.put("result", "Invalid because no input provided for at least 1 form");
+                return new ModelAndView(map, "compute.mustache");
+            }
+
+
             int[] inputParam1Arr = new int[inputList.size()];
             for(int i=0; i < inputParam1Arr.length ;i++){
                 inputParam1Arr[i] = inputList.get(i);
             }
 
             String input2 = req.queryParams("input2AsInt").replaceAll("\\s","");
-            if(input2.equals("")) //is empty
-                input2 = "0"; // set to zero
+
             int input2AsInt;
             try {
+                if(input2.equals(""))  throw new Exception();//set to an ınvalid type. Empty ınput cannot be accepted
                 input2AsInt = Integer.parseInt(input2);
             } catch (Exception e){
                 Map map = new HashMap();
-                map.put("result", "Invalid");
+                map.put("result", "Invalid because no input provided for at least 1 form");
                 return new ModelAndView(map, "compute.mustache");
             }
             String inputBool = req.queryParams("valid").replaceAll("\\s","");
