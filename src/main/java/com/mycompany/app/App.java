@@ -97,8 +97,8 @@ public class App
                     inputBoolAsInt = Integer.parseInt("ahmet"); // cause error on purpose.
             } catch (Exception e){
                 Map map = new HashMap();
-                map.put("result", "Invalid");
-                return new ModelAndView(map, "Invalid because no input provided for at least 1 form");
+                map.put("result", "Invalid because no input provided for at least 1 form");
+                return new ModelAndView(map, "compute.mustache");
 
             }
             try {
