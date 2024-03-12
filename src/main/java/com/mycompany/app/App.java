@@ -93,6 +93,15 @@ public class App
             String inputBool = req.queryParams("valid").replaceAll("\\s","");
             int inputBoolAsInt;
             try {
+                if (inputBool.equals(""))
+                    inputBoolAsInt = Integer.parseInt("ahmet"); // cause error on purpose.
+            } catch (Exception e){
+                Map map = new HashMap();
+                map.put("result", "Invalid");
+                return new ModelAndView(map, "Invalid because no input provided for at least 1 form");
+
+            }
+            try {
                 inputBoolAsInt = Integer.parseInt(inputBool);
                 if(inputBoolAsInt != 1 && inputBoolAsInt != 0)
                     inputBoolAsInt = Integer.parseInt("ahmet"); // cause error on purpose.
